@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Maratona News</title>
+    <link href="https://andybrewer.github.io/mvp/mvp.css" rel="stylesheet"></link>
+  </head>
+  <style>
+    a{
+      color:#b8babb
+    }
+    a:hover{
+      color:#ffffff
+    }
+  </style>
+  <body style="background: #474c50">
+    <header>
+      <h1 style="color: #ffffff">{{result.title}}</h1>
+      <div>
+        <p style="color:#b8babb">{{result.points}} points | By: {{result.author}} | <a href="{{result.url}}">{{result.url}}</a></p>
+      </div>
+      <a href="/">Home Page</a>
+    </header>
+    <main style="color: #ffffff">
+      {% for comment in comments %}
+        <div>
+          <strong>{{comment.author}}</strong>
+          <p>{{comment.comment_text|safe}}</p>
+        </div>
+        <hr />
+    {% endfor %}
+    </main>
+  </body>
+</html>

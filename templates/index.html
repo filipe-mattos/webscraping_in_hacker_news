@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Api News</title>
+  <link href="https://andybrewer.github.io/mvp/mvp.css" rel="stylesheet"></link>
+  </head>
+  <style>
+    a{
+      color:#b8babb
+    }
+    a:hover{
+      color:#ffffff
+    }
+  </style>
+  <body style="background: #474c50">
+    <header>
+      <h1 style="color: #ffffff">Api News</h1>
+      <div>
+        <a href="/?order_by=popular" style="margin-right: 10px">Popular</a>
+        <a href="/?order_by=new">Novo</a>
+      </div>
+    </header>
+    <main>
+        {% for news in result %}
+        <div>
+          <div>
+            <a href="{{news.objectID}}"><h3 style="color: #ffffff">{{news.title}}</h3></a>
+            <a style="color: #ffffff" href="{{news.url}}" target="_blanlk">{{news.url}}</a>
+          </div>
+          <div>
+            <p style="color:#b8babb">{{news.points}} points | By: {{news.author}} | {{news.num_comments}} comentarios</p>
+          </div>
+        </div>
+        <hr/>
+        {% endfor %}
+    </main>
+  </body>
+</html>
